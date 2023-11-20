@@ -19,11 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('master', 'layouts.master');
+Route::view('admin/dashboard', 'admin.dashboard');
+Route::view('admin/brand', 'admin.brand');
+
 Route::resource('products', ProductController::class);
 Route::resource('students', StudentController::class);
 
-Route::get('brands', [BrandController::class, 'index'])->name('brands');
-Route::get('brands/create', [BrandController::class, 'create'])->name('brands.create');
+Route::get('admin/brands', [BrandController::class, 'index'])->name('brands');
+Route::get('admin/brands/create', [BrandController::class, 'create'])->name('brands.create');
 Route::post('brands/store', [BrandController::class, 'store'])->name('brands.store');
 Route::get('brands/{id}', [BrandController::class, 'show'])->name('brands.show');
 Route::get('brands/{id}/edit', [BrandController::class, 'edit'])->name('brands.edit');

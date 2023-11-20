@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+
+
 @section('content')
 <h1>Student</h1>
 <a href="{{ route('students.create')}}" class="btn btn-success">Create Student</a>

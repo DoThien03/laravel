@@ -17,7 +17,7 @@ class BrandController extends Controller
 
     public function index()
     {
-        $data = Brand::query()->latest()->paginate(5);
+        $data = Brand::query()->latest();
 
         return view(self::PATH_VIEW . __FUNCTION__, compact('data'));
     }
